@@ -1,0 +1,34 @@
+.leaflet-container{
+    width: 1050px;
+    height: 250px;
+}
+
+
+@media(max-width:1120px) {
+    .leaflet-container {
+        width: 100%;
+    }
+}
+
+@media(max-width:1050px) {
+    .leaflet-container {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+@media(max-width:750px) {
+    .leaflet-container {
+        width: 100%;
+    }
+    .map{
+        padding-inline: 4rem;
+    }
+}
+
+@media(max-width:560px) {
+    .map{
+        padding-inline: unset;
+    }
+}

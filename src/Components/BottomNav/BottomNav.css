@@ -1,0 +1,166 @@
+section {
+    position: relative;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    height: 20rem;
+    gap: 6rem;
+    background: hsl(230, 21%, 95%);
+    width: 88%;
+    overflow: hidden;
+}
+
+.footer .links {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.footer .logo {
+    height: 20rem;
+    line-height: 22rem;
+    padding-inline: 4rem;
+    background: black;
+}
+
+.footer span {
+    font-size: 2rem;
+    color: black;
+}
+
+.footer .btn {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    width: 25rem;
+    font-size: 1.8rem;
+
+}
+
+.footer .btn:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.footer .btn span {
+    color: white;
+}
+
+
+
+/* ---media query-- */
+
+
+
+
+@media(max-width:1499px) {
+    .footer-parent {
+        height: unset;
+    }
+
+    .footer .logo {
+        height: 15rem;
+        line-height: 15rem;
+        padding: 1rem;
+    }
+
+    .footer {
+        height: 15rem;
+    }
+
+    .footer .links {
+        display: flex;
+    }
+
+
+    .footer .btn {
+        width: unset;
+        padding-inline: 1.5rem;
+    }
+
+}
+
+/* @media(max-width:1200px) {
+    .footer-parent {
+        height: unset;
+    }
+
+    .footer .logo {
+        height: 15rem;
+        line-height: 15rem;
+        padding: 1rem;
+    }
+
+    .footer {
+        height: 15rem;
+    }
+
+    .footer .links {
+        display: flex;
+        width: 250px;
+    }
+
+
+    .footer .btn {
+        width: unset;
+        padding-inline: 1.5rem;
+    }
+
+} */
+
+@media(max-width:950px) {
+
+    .footer-parent {
+        width: 100vw;
+        margin-left: unset;
+        padding-top: 14rem;
+    }
+
+    .footer {
+        margin-left: unset;
+    }
+
+    .footer .btn {
+        padding-inline: 2.7rem;
+    }
+}
+
+
+@media(max-width:750px) {
+
+    .footer-parent {
+        width: 100%;
+        padding-inline: 0;
+        padding-bottom: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding-block: 5rem;
+    }
+
+    .footer .links {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        margin-top: 8rem;
+    }
+
+    .footer .logo {
+        position: absolute;
+        top: 14%;
+        height: 12rem;
+        line-height: 12rem;
+    }
+
+
+    .footer .btn {
+        position: unset;
+    }
+}

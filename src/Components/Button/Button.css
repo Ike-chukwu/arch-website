@@ -1,0 +1,17 @@
+.btn{
+    background: black;
+    width: 20rem;
+    height: 7rem;
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+
+.btn:hover{
+    background:hsl(230, 21%, 65%);
+}

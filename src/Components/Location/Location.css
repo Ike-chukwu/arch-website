@@ -1,0 +1,36 @@
+
+.loc-container{
+    display: none;
+}
+
+@media(min-width:1200px){
+    .loc-container{
+        position: absolute;
+        top: 0;
+        left: 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    
+    .loc-container .line{
+        width: .1rem;
+        height: 10rem;
+        /* margin-left: 8rem; */
+        background: #C9CDD9;
+    }
+    
+    .loc-container .title{
+        margin-left: -1rem;
+        writing-mode: vertical-lr;
+        font-size: 1.8rem;
+        letter-spacing: 1.5rem;
+        text-transform: uppercase;
+        color: #C9CDD9;
+    }
+    
+}
+
+
+/* @media(max-width:900px){ */
+/* } */

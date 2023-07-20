@@ -1,0 +1,26 @@
+
+.about .footer{
+    width: 75%;
+}
+.about .footer-parent .footer .btn{
+    right:13.5%;
+    width: 28rem;
+ }
+
+
+@media(max-width:1499px){
+    .about .footer{
+        width: 80%;
+    }
+    .about .footer-parent .footer .btn{
+        right:0%;
+        width: 28rem;
+     }
+}
+
+
+@media(max-width:750px){
+    .about .footer{
+        width: unset;
+    }
+}

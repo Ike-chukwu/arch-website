@@ -1,0 +1,28 @@
+.small{
+    background: lightgray;
+    width: 6rem;
+    height: .2rem;
+    position: absolute;
+    top: 30%;
+    left: 32%;
+}
+
+
+@media(max-width:150px){
+    .small{
+        left: 8%;
+    }
+}
+
+
+@media(max-width:1150px){
+    .small{
+        left: 8%;
+    }
+}
+
+@media(max-width:950px){
+    .small{
+        display: none;
+    }
+}

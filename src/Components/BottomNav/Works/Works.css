@@ -1,0 +1,46 @@
+.card-distro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: unset;
+}
+
+.card-distro .card {
+    width: unset;
+    overflow-y: hidden;
+}
+
+.card-distro .card:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+
+
+@media(max-width:1550px) {
+
+    .card-distro .card {
+        height: 400px;
+    }
+}
+
+
+@media(max-width:1000px) {
+    .card-distro {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-distro .card {
+        height: 350px;
+    }
+
+}
+
+@media(max-width:750px){
+    .card-distro {
+        width: 100%;
+        padding-inline: 4rem;
+        justify-content: center;
+    }
+}

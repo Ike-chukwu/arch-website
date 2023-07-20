@@ -1,0 +1,155 @@
+.welcome {
+    position: relative;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+
+.welcome .welcome-content {
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+    position: relative;
+}
+
+
+.welcome .welcome-content .left {
+    align-self: flex-end;
+}
+
+.welcome .welcome-content::before {
+    position: absolute;
+    content: "Welcome";
+    font-size: 25rem;
+    top: -150px;
+    left: 0;
+    right: 0;
+    letter-spacing: 2rem;
+    color: hsl(230, 21%, 95%);
+    font-weight: 700;
+}
+
+
+.welcome .welcome-content .left .p-pack {
+    margin-top: 3rem;
+}
+
+.welcome .welcome-content .left h2 {
+    font-size: 6rem;
+}
+
+.welcome .welcome-content .left p {
+    font-size: 2rem;
+    margin-block: 2.5rem;
+    max-width: 500px;
+}
+
+
+
+
+
+
+
+@media(min-width:1500px) {
+
+    .welcome {
+        position: relative;
+    }
+
+    .welcome .welcome-content::before {
+        font-size: 22rem;
+    }
+}
+
+
+@media(max-width:1499px) {
+    .welcome .welcome-content::before {
+        top: -100px;
+        font-size: 18rem;
+    }
+
+    .welcome .welcome-content {
+        justify-content: space-between;
+    }
+
+}
+
+
+
+@media(max-width:1199px) {
+
+    .welcome .welcome-content::before {
+        top: -120px;
+        font-size: 13rem;
+        letter-spacing: 1.4rem;
+    }
+
+    .welcome .welcome-content {
+        padding-top: 2rem;
+    }
+
+    .welcome .welcome-content .left {
+        align-self: flex-start;
+    }
+
+    .welcome {
+        margin-top: 10rem;
+    }
+}
+
+
+
+@media(max-width:1050px) {
+    .welcome .welcome-content .right {
+        display: none;
+    }
+
+    .welcome .welcome-content .left .p-pack {
+        width: 100%;
+    }
+
+    .welcome .welcome-content .left p {
+        max-width: unset;
+        width: 100%;
+    }
+
+   
+}
+
+
+
+
+@media(max-width:750px) {
+    .welcome {
+        padding-block: 6rem;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
+    .welcome .welcome-content {
+        padding-top: 0;
+        margin-top: 20rem;
+    }
+
+    .welcome .welcome-content::before {
+        font-size: 8rem;
+    }
+
+    .welcome .welcome-content .left h2 {
+        font-size: 4.5rem;
+    }
+}
+
+
+
+@media(max-width:450px) {
+
+    .welcome .welcome-content .left {
+        margin-top: -2rem;
+    }
+
+
+    .welcome .welcome-content::before {
+        font-size: 7rem;
+    }
+}

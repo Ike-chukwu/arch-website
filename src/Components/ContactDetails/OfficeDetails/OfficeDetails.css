@@ -1,0 +1,60 @@
+.contact-add .add-pack {
+    margin-top: 2rem;
+}
+
+.contact-add .main-add {
+    font-size: 2rem;
+    color: hsl(225, 13%, 12%);
+    font-weight: 700;
+}
+
+.contact-add .others {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-add .others .other-adds {
+    font-size: 2rem;
+    margin-block: 1.5rem;
+    color: hsl(226, 6%, 40%);
+}
+
+.linker {
+    font-size: 2rem;
+    color: hsl(225, 13%, 12%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 700;
+}
+
+@media(max-width:1050px) {
+
+    .contact-add .add-pack {
+        display: flex;
+        gap: 110px;
+        align-items: center;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .contact-add .add-pack {
+        gap: unset;
+        justify-content: space-between;
+        margin-right: 2rem;
+    }
+
+}
+
+
+@media(max-width:560px) {
+    .contact-add .add-pack {
+        display: unset;
+        gap: unset;
+        align-items: unset;
+    }
+
+}

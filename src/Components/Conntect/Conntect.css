@@ -1,0 +1,110 @@
+.contect {
+    display: flex;
+    gap: 235px;
+    padding-bottom: 10rem;
+    position: relative;
+}
+
+.contect h2 {
+    font-size: 6rem;
+}
+
+.contect .input-container {
+    width: 600px;
+    position: relative;
+}
+
+.contect .input-container .inputs {
+    width: 100%;
+}
+
+.contect .input-container .inputs input,
+textarea {
+    width: 100%;
+    padding: 3.5rem 3rem;
+    display: block;
+    border: none;
+    border-bottom: .1rem solid black;
+    font-size: 2rem;
+}
+
+.contect .input-container .inputs input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.contect .input-container .inputs input::placeholder,
+textarea::placeholder {
+    font-size: 2rem;
+    color: grey;
+    font-weight: 600;
+}
+
+
+.contect .input-container .inputs input.clicked,
+textarea.clicked {
+    border-bottom: .3rem solid black;
+}
+
+
+.contect .input-container .black-button {
+    width: 8rem;
+    height: 8rem;
+    text-align: center;
+    line-height: 8rem;
+    background: black;
+    position: absolute;
+    right: 0;
+    margin-top: 2px;
+}
+
+.contect .input-container .black-button i {
+    font-size: 2rem;
+    color: white;
+}
+
+
+@media(max-width:1499px) {
+    .contect {
+        gap: unset;
+        justify-content: space-between;
+    }
+
+    .contect .input-container {
+        margin-right: -5rem;
+
+    }
+
+
+}
+
+
+@media(max-width:1120px) {
+    .contect {
+        flex-direction: column;
+        gap: 3.5rem;
+        padding-top: 17rem;
+    }
+
+    .contect .input-container {
+        margin-right: unset;
+        width: 100%;
+    }
+
+}
+
+
+
+@media(max-width:750px) {
+    .contect {
+        padding-inline: 4rem;
+    }
+}
+
+
+@media(max-width:560px) {
+    .contect {
+        padding-inline: 2.7rem;
+        padding-top: 5rem;
+    }
+}

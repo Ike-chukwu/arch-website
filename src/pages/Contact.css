@@ -1,0 +1,51 @@
+.contact .footer {
+    width: 75%;
+}
+
+.contact .footer-parent .footer .btn {
+    right: 12.5%;
+    width: 28rem;
+}
+
+
+@media(max-width:1499px) {
+    .contact .footer {
+        width: 83%;
+    }
+
+    .contact .footer-parent .footer .btn {
+        right: -5%;
+        width: 28rem;
+    }
+}
+
+@media(max-width:1120px){
+    .contact .footer-parent .footer .btn {
+        right: 0%;
+        width: 28rem;
+    }
+}
+
+
+@media(max-width:1050px) {
+    .contact .details .right::before {
+        content: "Contact";
+        left: 0;
+    }
+
+    .contact .footer-parent .footer .btn {
+        right: 0;
+        width: unset;
+    }
+}
+
+
+@media(max-width:750px) {
+    .contact .details .right::before {
+        content: "";
+    }
+
+    .contact .footer{
+        width: unset;
+    }
+}

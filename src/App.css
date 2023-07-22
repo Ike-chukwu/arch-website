@@ -15,6 +15,24 @@ body {
     overflow-x: hidden;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p,
+span,
+a {
+    font-family: 'Maven Pro', sans-serif
+}
+
+
+
 @media(min-width:1500px) {
     section {
         /* margin-left: 20%; */
@@ -33,7 +51,7 @@ body {
     }
 }
 
-@media(max-width:1050px){
+@media(max-width:1050px) {
     section {
         width: 700px;
         margin-inline: auto;
@@ -44,7 +62,7 @@ body {
 
 @media(max-width:750px) {
 
-    html{
+    html {
         font-size: 56%;
     }
 

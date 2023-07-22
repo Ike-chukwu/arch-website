@@ -56,6 +56,11 @@ textarea.clicked {
     position: absolute;
     right: 0;
     margin-top: 2px;
+    cursor: pointer;
+}
+
+.contect .input-container .black-button:hover{
+    opacity: .7;
 }
 
 .contect .input-container .black-button i {

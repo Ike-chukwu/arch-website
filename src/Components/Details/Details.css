@@ -38,6 +38,7 @@
     .details .right::before{
         content: "About";
         position: absolute;
+        font-family: 'Roboto', sans-serif;
         left: 0%;
         top: -30%;
         font-size: 22rem;

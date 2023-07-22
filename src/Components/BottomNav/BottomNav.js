@@ -17,7 +17,7 @@ const BottomNav = () => {
         <Link to="/portfolio">
           <span>Porfolio</span>
         </Link>
-        <Link to="/aboutus">
+        <Link to="/about-us">
           <span>About Us</span>
         </Link>
         <Link to="/contact">

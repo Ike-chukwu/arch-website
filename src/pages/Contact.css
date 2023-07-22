@@ -7,6 +7,16 @@
     width: 28rem;
 }
 
+.contact .details .right::before{
+    content: "Contact";
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: -170px;
+    top: -30%;
+    font-size: 22rem;
+    font-weight: 700;
+    color: hsl(230, 21%, 95%);
+}
 
 @media(max-width:1499px) {
     .contact .footer {
@@ -19,18 +29,26 @@
     }
 }
 
-@media(max-width:1120px){
+@media(max-width:1160px){
     .contact .footer-parent .footer .btn {
         right: 0%;
         width: 28rem;
     }
+
+    .contact .details .right::before {
+        font-size: 15rem;
+        top: -20%;
+        left: -20px;   
+    }
+    
 }
 
 
 @media(max-width:1050px) {
     .contact .details .right::before {
-        content: "Contact";
         left: 0;
+        font-size: 16rem;
+        top: -30%;
     }
 
     .contact .footer-parent .footer .btn {

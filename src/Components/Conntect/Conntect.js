@@ -3,28 +3,42 @@ import "./Conntect.css";
 import rightArrow from "../../assets/icons/icon-arrow.svg";
 
 const Conntect = () => {
-  const IDS = [1, 2, 3];
-  const [inputValue, setInputValue] = useState("");
+   const IDS = [
+    { id: 0, value: "", valid: false, placeholder: "Name" },
+    { id: 1, value: "", valid: false, placeholder: "Email" },
+    { id: 2, value: "", valid: false, placeholder: "Message" },
+  ];
+  const [inputValue, setInputValue] = useState(IDS);
   const [inputStyle, setinputStyle] = useState(false);
   const [inputStyleNo, setinputStyleNo] = useState("");
 
+
   const clicked = (index) => {
-        setinputStyle(true)
-        setinputStyleNo(index)
-  }
+    setinputStyle(true);
+    setinputStyleNo(index);
+  };
 
-  const inputs = IDS.map((item, index) => {
-    if (item == 1) {
-      return <input type="text" key={index} className={inputStyle==true && inputStyleNo == index? "clicked" : ""} onClick={() => clicked(index)}  placeholder="Name" />;
-    }
-    if (item == 2) {
-      return <input type="text" key={index} className={inputStyle==true && inputStyleNo == index? "clicked" : ""} onClick={() => clicked(index)}  placeholder="Email" />;
-    }
-    if (item == 3) {
-      return <textarea type="text"  key={index} className={inputStyle==true && inputStyleNo == index? "clicked" : ""} onClick={() => clicked(index)}  placeholder="Message" />;
-    }
-  });
+  const handleChange = (e, id) => {
+    const arrayCpy = [...inputValue];
+    arrayCpy.map((item) => {
+      if (item.id == id) {
+        item.value = e.target.value;
+        item.valid = item.value == ""
+      }
+      return item;
+    });
+    console.log(arrayCpy);
+    setInputValue(arrayCpy);
+  };
 
+  const validationn = () => {
+    const validCheck = inputValue.some((item) => item.value == "");
+    if (validCheck) {
+      return;
+    } else {
+      window.open("mailto:archone@mail.com?subject=SendMail&body=Description");
+    }
+  };
 
   return (
     <section className="contect">
@@ -34,12 +48,53 @@ const Conntect = () => {
       </h2>
       <div className="input-container">
         <div className="inputs">
-          {inputs}
-          {/* <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Email" />
-          <textarea type="text" className="message" placeholder="Message" /> */}
+          {inputValue.map((item, index) => {
+            if (index == 2) {
+              return (
+                <textarea
+                  key={item.id}
+                  onChange={(e) => handleChange(e, index)}
+                  type="text"
+                  className={
+                    inputStyle == true && inputStyleNo == index ? "clicked" : ""
+                  }
+                  onClick={() => clicked(index)}
+                  placeholder="Message"
+                  value={item.value}
+                />
+              );
+            }
+            if (index == 1) {
+              return (
+                <input
+                  key={item.id}
+                  onChange={(e) => handleChange(e, index)}
+                  type="text"
+                  className={
+                    inputStyle == true && inputStyleNo == index ? "clicked" : ""
+                  }
+                  onClick={() => clicked(index)}
+                  placeholder="Email"
+                  value={item.value}
+                />
+              );
+            }
+            return (
+              <input
+                key={item.id}
+                onChange={(e) => handleChange(e, index)}
+                type="text"
+                className={
+                  inputStyle == true && inputStyleNo == index ? "clicked" : ""
+                }
+                onClick={() => clicked(index)}
+                placeholder="Name"
+                value={item.value}
+              />
+            );
+          })}
         </div>
-        <div className="black-button">
+        <div className="black-button" onClick={validationn}>
           <i className="fas fa-chevron-right"></i>
         </div>
       </div>

@@ -3,14 +3,49 @@ import "./Conntect.css";
 import rightArrow from "../../assets/icons/icon-arrow.svg";
 
 const Conntect = () => {
-   const IDS = [
-    { id: 0, value: "", valid: false, placeholder: "Name" },
-    { id: 1, value: "", valid: false, placeholder: "Email" },
-    { id: 2, value: "", valid: false, placeholder: "Message" },
+  const IDS = [
+    {
+      id: 0,
+      value: "",
+      placeholder: "Name",
+      type: "text",
+      required: true,
+      errorMessage: "Name cant be empty",
+      name: "Name",
+    },
+    {
+      id: 1,
+      value: "",
+      placeholder: "Email",
+      type: "email",
+      required: true,
+      errorMessage: "Invalid email",
+      name: "Email",
+    },
+    {
+      id: 2,
+      value: "",
+      placeholder: "Message",
+      type: "text",
+      required: true,
+      errorMessage: "Maximum permittered characters is !00",
+      name: "Message",
+      Pattern: "",
+    },
   ];
+
   const [inputValue, setInputValue] = useState(IDS);
   const [inputStyle, setinputStyle] = useState(false);
   const [inputStyleNo, setinputStyleNo] = useState("");
+
+  
+  
+  const [focus, setFocus] = useState(false)
+  const triggerFocus = () => {
+    setFocus(true)
+  }
+
+
 
 
   const clicked = (index) => {
@@ -23,7 +58,6 @@ const Conntect = () => {
     arrayCpy.map((item) => {
       if (item.id == id) {
         item.value = e.target.value;
-        item.valid = item.value == ""
       }
       return item;
     });
@@ -31,13 +65,14 @@ const Conntect = () => {
     setInputValue(arrayCpy);
   };
 
-  const validationn = () => {
+  const validationn = (e) => {
+    e.preventDefault();
     const validCheck = inputValue.some((item) => item.value == "");
-    if (validCheck) {
-      return;
-    } else {
-      window.open("mailto:archone@mail.com?subject=SendMail&body=Description");
-    }
+    // if (validCheck) {
+    //   return;
+    // } else {
+    // window.open("mailto:archone@mail.com?subject=SendMail&body=Description");
+    // }
   };
 
   return (
@@ -47,56 +82,72 @@ const Conntect = () => {
         with us
       </h2>
       <div className="input-container">
-        <div className="inputs">
+        <form className="inputs" onSubmit={validationn}>
           {inputValue.map((item, index) => {
             if (index == 2) {
               return (
-                <textarea
-                  key={item.id}
-                  onChange={(e) => handleChange(e, index)}
-                  type="text"
-                  className={
-                    inputStyle == true && inputStyleNo == index ? "clicked" : ""
-                  }
-                  onClick={() => clicked(index)}
-                  placeholder="Message"
-                  value={item.value}
-                />
+                <div>
+                  <textarea
+                    key={item.id}
+                    onChange={(e) => handleChange(e, index)}
+                    className={
+                      inputStyle == true && inputStyleNo == index
+                        ? "clicked"
+                        : ""
+                    }
+                    {...item}
+                    // focused = {focus.toString()}
+                    // onBlur={triggerFocus}
+                    onClick={() => clicked(index)}
+                    value={item.value}
+                  />
+                  <span className="error">{item.errorMessage}</span>
+                </div>
               );
             }
             if (index == 1) {
               return (
+                <div>
+                  <input
+                    key={item.id}
+                    onChange={(e) => handleChange(e, index)}
+                    className={
+                      inputStyle == true && inputStyleNo == index
+                        ? "clicked"
+                        : ""
+                    }
+                    {...item}
+                    // focused = {focus.toString()}
+                    // onBlur={triggerFocus}
+                    onClick={() => clicked(index)}
+                    value={item.value}
+                  />
+                  <span className="error">{item.errorMessage}</span>
+                </div>
+              );
+            }
+            return (
+              <div>
                 <input
                   key={item.id}
                   onChange={(e) => handleChange(e, index)}
-                  type="text"
                   className={
                     inputStyle == true && inputStyleNo == index ? "clicked" : ""
                   }
                   onClick={() => clicked(index)}
-                  placeholder="Email"
                   value={item.value}
+                  {...item}
+                  // focused = {focus.toString()}
+                  // onBlur={triggerFocus}
                 />
-              );
-            }
-            return (
-              <input
-                key={item.id}
-                onChange={(e) => handleChange(e, index)}
-                type="text"
-                className={
-                  inputStyle == true && inputStyleNo == index ? "clicked" : ""
-                }
-                onClick={() => clicked(index)}
-                placeholder="Name"
-                value={item.value}
-              />
+                <span className="error">{item.errorMessage}</span>
+              </div>
             );
           })}
-        </div>
-        <div className="black-button" onClick={validationn}>
-          <i className="fas fa-chevron-right"></i>
-        </div>
+          <button className="black-button">
+            <i className="fas fa-chevron-right"></i>
+          </button>
+        </form>
       </div>
     </section>
   );

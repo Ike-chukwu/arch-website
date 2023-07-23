@@ -33,6 +33,14 @@ textarea:focus {
     outline: none;
 }
 
+ .contect .input-container .inputs span{
+    display: none;
+}
+/*
+.contect .input-container .inputs input:invalid[focused="true"] ~ span{
+    display: block;
+} */
+
 .contect .input-container .inputs input::placeholder,
 textarea::placeholder {
     font-size: 2rem;
@@ -66,6 +74,11 @@ textarea.clicked {
 .contect .input-container .black-button i {
     font-size: 2rem;
     color: white;
+}
+
+.error{
+    color: red;
+    font-size: 1.3rem;
 }
 
 

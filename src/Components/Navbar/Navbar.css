@@ -21,10 +21,14 @@ nav .links-parent .l-cover .links span {
     font-weight: 600;
 }
 
+nav .links-parent .l-cover .links span:hover{
+    color: hsl(0, 2%, 67%);
+    font-weight: 800;
+}
+
 .fa-bars {
     display: none;
 }
-
 
 
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Details.css";
 import SmallHyphen from "./SmaalHyphen/SmallHyphen";
-import heroM from "../../assets/about/mobile/image-hero.jpg";
 
 const Details = (props) => {
   return (

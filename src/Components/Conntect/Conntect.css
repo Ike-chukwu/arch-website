@@ -36,10 +36,14 @@ textarea:focus {
  .contect .input-container .inputs span{
     display: none;
 }
-/*
+
 .contect .input-container .inputs input:invalid[focused="true"] ~ span{
     display: block;
-} */
+}
+
+.contect .input-container .inputs textarea:invalid[focused="true"] ~ span{
+    display: block;
+}
 
 .contect .input-container .inputs input::placeholder,
 textarea::placeholder {

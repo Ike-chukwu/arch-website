@@ -1,9 +1,6 @@
 import React from "react";
 import "./Featured.css";
 import Button from "../Button/Button";
-import img1 from "../../assets/portfolio/desktop/image-del-sol.jpg";
-import img2 from "../../assets/portfolio/desktop/image-228b.jpg";
-import img3 from "../../assets/portfolio/desktop/image-prototype.jpg";
 import { Link } from "react-router-dom";
 import Cards from "./Cards/Cards";
 

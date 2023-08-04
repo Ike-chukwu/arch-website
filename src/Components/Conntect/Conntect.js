@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Conntect.css";
-import rightArrow from "../../assets/icons/icon-arrow.svg";
+import Input from "../../Input/Input";
 
 const Conntect = () => {
   const IDS = [
@@ -10,8 +10,10 @@ const Conntect = () => {
       placeholder: "Name",
       type: "text",
       required: true,
-      errorMessage: "Name cant be empty",
+      errorMessage: "Name is too short",
       name: "Name",
+      elementType: "input",
+      pattern: "^.{3,}$",
     },
     {
       id: 1,
@@ -21,6 +23,7 @@ const Conntect = () => {
       required: true,
       errorMessage: "Invalid email",
       name: "Email",
+      elementType: "input",
     },
     {
       id: 2,
@@ -28,28 +31,19 @@ const Conntect = () => {
       placeholder: "Message",
       type: "text",
       required: true,
-      errorMessage: "Maximum permittered characters is !00",
+      errorMessage:
+        "Please your message should contain at least 50 characters.We want you to be descriptive enough",
       name: "Message",
-      Pattern: "",
+      pattern: "^.{50,}$",
+      elementType: "textarea",
     },
   ];
 
   const [inputValue, setInputValue] = useState(IDS);
-  const [inputStyle, setinputStyle] = useState(false);
   const [inputStyleNo, setinputStyleNo] = useState("");
-
-  
-  
-  const [focus, setFocus] = useState(false)
-  const triggerFocus = () => {
-    setFocus(true)
-  }
-
-
 
 
   const clicked = (index) => {
-    setinputStyle(true);
     setinputStyleNo(index);
   };
 
@@ -61,18 +55,12 @@ const Conntect = () => {
       }
       return item;
     });
-    console.log(arrayCpy);
     setInputValue(arrayCpy);
   };
 
   const validationn = (e) => {
     e.preventDefault();
-    const validCheck = inputValue.some((item) => item.value == "");
-    // if (validCheck) {
-    //   return;
-    // } else {
-    // window.open("mailto:archone@mail.com?subject=SendMail&body=Description");
-    // }
+    window.open("mailto:archone@mail.com?subject=SendMail&body=Description");
   };
 
   return (
@@ -84,64 +72,17 @@ const Conntect = () => {
       <div className="input-container">
         <form className="inputs" onSubmit={validationn}>
           {inputValue.map((item, index) => {
-            if (index == 2) {
-              return (
-                <div>
-                  <textarea
-                    key={item.id}
-                    onChange={(e) => handleChange(e, index)}
-                    className={
-                      inputStyle == true && inputStyleNo == index
-                        ? "clicked"
-                        : ""
-                    }
-                    {...item}
-                    // focused = {focus.toString()}
-                    // onBlur={triggerFocus}
-                    onClick={() => clicked(index)}
-                    value={item.value}
-                  />
-                  <span className="error">{item.errorMessage}</span>
-                </div>
-              );
-            }
-            if (index == 1) {
-              return (
-                <div>
-                  <input
-                    key={item.id}
-                    onChange={(e) => handleChange(e, index)}
-                    className={
-                      inputStyle == true && inputStyleNo == index
-                        ? "clicked"
-                        : ""
-                    }
-                    {...item}
-                    // focused = {focus.toString()}
-                    // onBlur={triggerFocus}
-                    onClick={() => clicked(index)}
-                    value={item.value}
-                  />
-                  <span className="error">{item.errorMessage}</span>
-                </div>
-              );
-            }
             return (
-              <div>
-                <input
-                  key={item.id}
-                  onChange={(e) => handleChange(e, index)}
-                  className={
-                    inputStyle == true && inputStyleNo == index ? "clicked" : ""
-                  }
-                  onClick={() => clicked(index)}
-                  value={item.value}
-                  {...item}
-                  // focused = {focus.toString()}
-                  // onBlur={triggerFocus}
-                />
-                <span className="error">{item.errorMessage}</span>
-              </div>
+              <Input
+                key={index}
+                itemId={index}
+                value={item.value}
+                errorMessage={item.errorMessage}
+                {...item}
+                handleChange={handleChange}
+                clickHandler={clicked}
+                inputStyleNo={inputStyleNo}
+              />
             );
           })}
           <button className="black-button">
